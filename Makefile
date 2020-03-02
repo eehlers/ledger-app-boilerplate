@@ -84,7 +84,8 @@ endif
 DEFINES       += HAVE_UX_FLOW
 
 # Enabling debug PRINTF
-DEBUG = 0
+#DEBUG = 0
+DEBUG = 1
 ifneq ($(DEBUG),0)
 
         ifeq ($(TARGET_NAME),TARGET_NANOX)
@@ -116,12 +117,14 @@ endif
 CC       := $(CLANGPATH)clang
 
 #CFLAGS   += -O0
-CFLAGS   += -O3 -Os
+#CFLAGS   += -O3 -Os
+CFLAGS   += -g
 
 AS     := $(GCCPATH)arm-none-eabi-gcc
 
 LD       := $(GCCPATH)arm-none-eabi-gcc
-LDFLAGS  += -O3 -Os
+#LDFLAGS  += -O3 -Os
+LDFLAGS  += -g
 LDLIBS   += -lm -lgcc -lc
 
 # import rules to compile glyphs(/pone)
