@@ -15,10 +15,11 @@ account = '{:08x}'.format(int(account_number))
 # Ask for confirmation
 # txt = "E0020100" + '{:02x}'.format(len(donglePath) + 1) + '{:02x}'.format( int(len(donglePath) / 4 / 2)) + donglePath
 # No confirmation
-apduMessage = "E0030100" + '{:02x}'.format(len(account) + 1) + account
+#apduMessage = "E0030100" + '{:02x}'.format(len(account) + 1) + account
+hash1 = "1ae450e248537de7092a6d295522b5c610bf4412f7bc557c7dcc0cda82550a6f"
+apduMessage = "E003" + hash1
 apdu = bytearray.fromhex(apduMessage)
 
-print("~~ Ledger Boilerplate ~~")
 print("Request Address")
 
 dongle = getDongle(True)

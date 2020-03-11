@@ -6,6 +6,6 @@
 #ifndef _FOO_H_
 #define _FOO_H_
 
-void foo(volatile unsigned int *tx);
+void foo(uint8_t *dataBuffer, volatile unsigned int *tx);
 
 #endif

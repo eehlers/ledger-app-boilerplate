@@ -3,7 +3,7 @@
 #include "ux.h"
 #include "utils.h"
 
-void foo(volatile unsigned int *tx) {
+void foo(uint8_t *dataBuffer, volatile unsigned int *tx) {
     G_io_apdu_buffer[0] = 0x01;
     G_io_apdu_buffer[1] = 0x02;
     G_io_apdu_buffer[2] = 0x03;
