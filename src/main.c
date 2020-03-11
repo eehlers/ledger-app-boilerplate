@@ -18,6 +18,7 @@
 #include "utils.h"
 #include "getAddress.h"
 #include "menu.h"
+#include "foo.h"
 
 unsigned char G_io_seproxyhal_spi_buffer[IO_SEPROXYHAL_BUFFER_SIZE_B];
 
@@ -59,11 +60,7 @@ void handleApdu(volatile unsigned int *flags, volatile unsigned int *tx) {
                     break;
 
                 case INS_FOO:
-                    G_io_apdu_buffer[0] = 0x01;
-                    G_io_apdu_buffer[1] = 0x02;
-                    G_io_apdu_buffer[2] = 0x03;
-                    *tx = 3;
-                    THROW(0x9000);
+                    foo(tx);
                     break;
 
                 default:

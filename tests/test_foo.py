@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from ledgerblue.comm import getDongle
-from binascii import unhexlify
+from binascii import hexlify, unhexlify
 
 account_number = "12345"
 
@@ -25,3 +25,5 @@ dongle = getDongle(True)
 result = dongle.exchange(apdu)
 
 #print("Address received: " + result.decode("utf-8"))
+print("Address received: " + hexlify(result))
+
